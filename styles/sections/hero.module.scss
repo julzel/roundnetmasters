@@ -1,0 +1,51 @@
+.hero {
+  width: 100dvw;
+  height: 100dvh;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent !important;
+
+  h2,
+  h3,
+  h4 {
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 64px;
+    line-height: 1;
+  }
+
+  h3 {
+    font-size: 48px;
+  }
+
+  h4 {
+    font-size: 32px;
+  }
+
+  &_cta {
+    text-align: center;
+    margin-top: 2rem;
+
+    .btn {
+      border-radius: 50px;
+      background: #f9d42d;
+      color: #000;
+      font-family: "Exo 2";
+      font-weight: 700;
+      letter-spacing: $letter-spacing-md;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1rem 2rem;
+  
+      &:hover {
+        background: #1d2f3d;
+      }
+    }
+  }
+}

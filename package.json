@@ -9,9 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fontsource/exo-2": "^5.0.16",
+    "@fontsource/russo-one": "^5.0.18",
+    "framer-motion": "^10.16.12",
+    "next": "14.0.3",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.0.3"
+    "sass": "^1.69.5"
   },
   "devDependencies": {
     "eslint": "^8",

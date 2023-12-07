@@ -1,0 +1,19 @@
+@import "~@fontsource/russo-one";
+@import "~@fontsource/exo-2";
+@import "@fontsource/exo-2/700.css"; // Bold
+@import "@fontsource/exo-2/600.css"; // SemiBold
+@import "@fontsource/exo-2/100.css"; // Thin
+@import "variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100dvw;
+  height: 100dvh;
+  font-family: "Neue Montreal", sans-serif;
+}

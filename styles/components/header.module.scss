@@ -1,0 +1,26 @@
+.header {
+  background-color: #f9d42d;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  z-index: 1;
+  left: 50%;
+  top: 60px;
+  transform: translateX(-50%);
+  border-radius: 50px;
+
+  &-nav {
+    display: flex;
+
+    &_item {
+      color: #000;
+      font-family: "Exo 2";
+      font-weight: 700;
+      letter-spacing: $letter-spacing-md;
+      margin: 0 0.5rem;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+  }
+}
