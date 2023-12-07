@@ -1,8 +1,8 @@
 import React, { useRef, useState, useEffect, useCallback } from 'react';
 
-const FullPageScroll = ({ children }) => {
+const FullPageScroll = ({ children, onSectionChange, section }) => {
   const containerRef = useRef(null);
-  const [currentSection, setCurrentSection] = useState(0);
+  const [currentSection, setCurrentSection] = useState(section);
   const [isScrolling, setIsScrolling] = useState(false);
   const sectionCount = React.Children.count(children);
 
@@ -18,10 +18,11 @@ const FullPageScroll = ({ children }) => {
 
     if (newSection !== currentSection) {
       setCurrentSection(newSection);
+      onSectionChange(newSection);
       setIsScrolling(true);
       setTimeout(() => setIsScrolling(false), 1500);
     }
-  }, [currentSection, isScrolling, sectionCount]);
+  }, [currentSection, isScrolling, sectionCount, onSectionChange]);
 
   const handleWheelEvent = useCallback((e) => {
     e.preventDefault();
@@ -52,6 +53,10 @@ const FullPageScroll = ({ children }) => {
   }, [handleWheelEvent, handleKeyboardEvent]);
 
   useEffect(() => {
+    setCurrentSection(section);
+  }, [section]);
+
+  useEffect(() => {
     containerRef.current.style.transform = `translateY(-${currentSection * 100}vh)`;
   }, [currentSection]);
 
@@ -65,61 +70,3 @@ const FullPageScroll = ({ children }) => {
 };
 
 export default FullPageScroll;
-
-// import React, { useRef, useState, useEffect, useCallback } from 'react';
-
-// const FullPageScroll = ({ children }) => {
-//   const containerRef = useRef(null);
-//   const [currentSection, setCurrentSection] = useState(0);
-//   const [isScrolling, setIsScrolling] = useState(false);
-//   const sectionCount = React.Children.count(children);
-
-//   const handleScroll = useCallback((deltaY) => {
-//     if(isScrolling) return;
-
-//     setIsScrolling(true);
-    
-//     if (deltaY > 0 && currentSection < sectionCount - 1) {
-//       setCurrentSection(currentSection + 1);
-//     } else if (deltaY < 0 && currentSection > 0) {
-//       setCurrentSection(currentSection - 1);
-//     }
-//     setTimeout(() => setIsScrolling(false), 1500);
-//   }, [isScrolling, currentSection, sectionCount]);
-
-//   const handleWheelEvent = useCallback((e) => {
-//     e.preventDefault();
-//     handleScroll(e.deltaY);
-//   }, [handleScroll]);
-
-//   const handleTouchEvent = useCallback((e) => {
-//     e.preventDefault();
-//     // Implement touch handling logic
-//   }, []);
-
-//   useEffect(() => {
-//     const container = containerRef.current;
-//     container.addEventListener('wheel', handleWheelEvent, { passive: false });
-//     container.addEventListener('touchmove', handleTouchEvent, { passive: false });
-
-//     return () => {
-//       container.removeEventListener('wheel', handleWheelEvent);
-//       container.removeEventListener('touchmove', handleTouchEvent);
-//     };
-//   }, [currentSection, handleWheelEvent, handleTouchEvent]);
-
-//   useEffect(() => {
-//     // Scroll to the current section
-//     containerRef.current.style.transform = `translateY(-${currentSection * 100}vh)`;
-//   }, [currentSection]);
-
-//   return (
-//     <div ref={containerRef} style={{ overflow: 'hidden', transition: 'transform 0.3s ease-in-out' }}>
-//       {React.Children.map(children, child => (
-//         <div style={{ height: '100vh' }}>{child}</div>
-//       ))}
-//     </div>
-//   );
-// };
-
-// export default FullPageScroll;

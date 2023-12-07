@@ -8,7 +8,6 @@ import styles from "../styles/components/page.module.scss";
 const Page = ({ children }) => {
   return (
     <div className="page">
-      <Header />
       <motion.main
         className={styles.page}
         initial={{ opacity: 0, scale: 0, }}

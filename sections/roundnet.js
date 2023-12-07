@@ -2,7 +2,7 @@ import Section from "@/components/section";
 
 const Roundnet = () => {
   return (
-    <Section>
+    <Section id="roundnet">
       <h1>Roundnet</h1>
     </Section>
   );

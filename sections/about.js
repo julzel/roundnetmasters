@@ -2,7 +2,7 @@ import Section from "@/components/section";
 
 const About = () => {
   return (
-    <Section>
+    <Section id="about">
       <h1>Nosotros</h1>
     </Section>
   );

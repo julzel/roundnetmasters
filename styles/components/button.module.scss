@@ -1,0 +1,41 @@
+.button {
+  cursor: pointer;
+  border: 1px solid $brand-secondary;
+  border-radius: 50px;
+  font-family: "Exo 2";
+  font-weight: 700;
+  letter-spacing: $letter-spacing-md;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  transition: all 0.3s ease-in-out;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &.primary {
+    background: $brand-primary;
+    color: $brand-secondary;
+
+    &:hover {
+      background: $brand-secondary;
+      color: $brand-primary;
+      border-color: $brand-primary;
+    }
+  }
+
+  &.secondary {
+    background: $brand-secondary;
+    color: $brand-primary;
+
+    &:hover {
+      background: $brand-primary;
+      color: $brand-secondary;
+    }
+  }
+
+  &.borderless {
+    border: none;
+  }
+}

@@ -1,26 +1,41 @@
 .header {
-  background-color: #f9d42d;
-  position: fixed;
+  background-color: $brand-primary;
+  border-radius: 50px;
+  border: 1px solid $brand-secondary;
+  color: $brand-secondary;
   display: flex;
   justify-content: space-between;
   padding: 1rem;
-  z-index: 1;
+  position: fixed;
   left: 50%;
   top: 60px;
   transform: translateX(-50%);
-  border-radius: 50px;
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    border-color: $brand-primary;
+    background-color: $brand-secondary;
+
+    .header-nav_item {
+      color: $brand-primary;
+    }
+  }
 
   &-nav {
     display: flex;
 
     &_item {
-      color: #000;
+      color: $brand-secondary;
       font-family: "Exo 2";
       font-weight: 700;
       letter-spacing: $letter-spacing-md;
-      margin: 0 0.5rem;
+      margin: 0 1rem;
       text-decoration: none;
       text-transform: uppercase;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }

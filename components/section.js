@@ -1,4 +1,4 @@
-const Section = ({ className, children, bgColor }) => {
+const Section = ({ className, children, bgColor, id }) => {
   const sectionStyle = {
     height: '100dvh',
     position: 'relative',
@@ -6,6 +6,8 @@ const Section = ({ className, children, bgColor }) => {
   }
   return (
     <section
+      key={id}
+      id={id}
       className={className}
       style={sectionStyle}
     >

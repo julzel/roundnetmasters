@@ -1,7 +1,9 @@
+import { useState } from "react";
+
 import Page from "@/components/page";
+import Header from "@/components/header";
 import FullPageScroll from "@/components/fullPageScroll";
 
-import styles from "../styles/pages/home.module.scss";
 import Hero from "@/sections/hero";
 import Roundnet from "@/sections/roundnet";
 import Store from "@/sections/store";
@@ -9,9 +11,13 @@ import About from "@/sections/about";
 import Contact from "@/sections/contact";
 
 const Home = () => {
+  const [section, setSection] = useState(0);
+  const handleSectionChange = (newSection) => setSection(newSection);
+
   return (
     <Page>
-      <FullPageScroll>
+      <Header onSectionChange={handleSectionChange} />
+      <FullPageScroll onSectionChange={handleSectionChange} section={section}>
         <Hero />
         <Roundnet />
         <Store />

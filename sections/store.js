@@ -2,7 +2,7 @@ import Section from "@/components/section";
 
 const Store = () => {
   return (
-    <Section>
+    <Section id="store">
       <h1>Tienda</h1>
     </Section>
   );
