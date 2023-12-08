@@ -1,0 +1,14 @@
+.social-media {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+
+  a {
+    color: $brand-secondary;
+
+    i {
+      margin-left: 1rem;
+      font-size: 1.75rem;
+    }
+  }
+}

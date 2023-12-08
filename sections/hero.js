@@ -6,10 +6,10 @@ import styles from "@/styles/sections/hero.module.scss";
 const Hero = () => {
   return (
     <Section id="home" className={styles.hero}>
-      {/* <div className={styles["hero_content"]}> */}
-      <Title>Roundnet</Title>
-      <Title type="h3">Masters</Title>
-      <Title type="h4">Costa Rica</Title>
+      <Title type="main-seo">Spikeball y Roundnet Masters Costa Rica</Title>
+      <Title type="banner">Roundnet</Title>
+      <Title type="h2">Masters</Title>
+      <Title type="h3">Costa Rica</Title>
       <div className={styles["hero_cta"]}>
         <Button variant="primary" type="link">
           <a
@@ -22,7 +22,6 @@ const Hero = () => {
           </a>
         </Button>
       </div>
-      {/* </div> */}
     </Section>
   );
 };

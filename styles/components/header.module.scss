@@ -9,7 +9,7 @@
   position: fixed;
   left: 50%;
   top: 60px;
-  transform: translateX(-50%);
+  transform: translateX(-50%)!important;
   z-index: 1;
   transition: all 0.3s ease-in-out;
   &:hover {
@@ -25,16 +25,16 @@
     display: flex;
 
     &_item {
+      cursor: pointer;
       color: $brand-secondary;
       font-family: "Exo 2";
       font-weight: 700;
       letter-spacing: $letter-spacing-md;
       margin: 0 1rem;
-      text-decoration: none;
       text-transform: uppercase;
 
       &:hover {
-        text-decoration: underline;
+        text-decoration: underline!important;
       }
     }
   }

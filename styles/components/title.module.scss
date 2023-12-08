@@ -1,11 +1,12 @@
 .title {
   font-family: "Russo One", sans-serif;
+  letter-spacing: $letter-spacing-xl;
 
   &.h1 {
     font-size: 96px;
   }
   &.h2 {
-    font-size: 64px;
+    font-size: 80px;
   }
   &.h3 {
     font-size: 48px;
@@ -20,4 +21,18 @@
   &.h6 {
     font-size: 24px;
   }
+  
+  &.banner {
+    font-size: 96px;
+  }
+}
+
+.seo {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  top: 0;
+  left: 0;
+  transform: translate(-100%, -100%);
 }

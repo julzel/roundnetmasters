@@ -3,6 +3,7 @@ import { useState } from "react";
 import Page from "@/components/page";
 import Header from "@/components/header";
 import FullPageScroll from "@/components/fullPageScroll";
+import SocialMedia from "@/components/social-media";
 
 import Hero from "@/sections/hero";
 import Roundnet from "@/sections/roundnet";
@@ -16,7 +17,7 @@ const Home = () => {
 
   return (
     <Page>
-      <Header onSectionChange={handleSectionChange} />
+      <Header onSectionChange={handleSectionChange} section={section} />
       <FullPageScroll onSectionChange={handleSectionChange} section={section}>
         <Hero />
         <Roundnet />
@@ -24,6 +25,7 @@ const Home = () => {
         <About />
         <Contact />
       </FullPageScroll>
+      <SocialMedia />
     </Page>
   );
 };
